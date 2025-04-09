@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.bracket-container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    position: relative;
+}
+
+/* Round styles */
+.round {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.matchup {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+    margin: 10px 0;
+    position: relative;
+}
+
+.player {
+    background-color: #fff;
+    border: 2px solid #444;
+    padding: 10px 20px;
+    text-align: center;
+    width: 100px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.round-1 .matchup {
+    margin-left: 10px;
+}
+
+.round-2 .matchup,
+.round-3 .matchup,
+.round-4 .matchup {
+    width: 200px;
+}
+
+.round-2 .matchup {
+    margin-left: 20px;
+}
+
+.round-3 .matchup {
+    margin-left: 30px;
+}
+
+.round-4 .matchup {
+    margin-left: 40px;
+}
+
+/* Connexion des matchs avec des lignes */
+.matchup::before, .matchup::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    height: 2px;
+    background-color: #444;
+}
+
+.matchup::before {
+    left: -20px;
+    width: 20px;
+}
+
+.matchup::after {
+    right: -20px;
+    width: 20px;
+}
+
+.round-1 .matchup::after, .round-2 .matchup::after {
+    height: 2px;
+    background-color: #444;
+}
+
+.round-2 .matchup::before {
+    top: -50%;
+    left: -20px;
+    width: 20px;
+}
+
+.round-3 .matchup::before {
+    top: -50%;
+    left: -20px;
+}
+
+.round-3 .matchup::after {
+    height: 2px;
+    width: 20px;
+    background-color: #444;
+}
+
+.round-4 .matchup::before, .round-4 .matchup::after {
+    width: 20px;
+    height: 2px;
+    background-color: #444;
+}
+
+
+
+
+  .nav-toggler {
+    position: fixed;
+    z-index: 10;
+    top: 30px;
+    left: 30px;
+    height: 50px;
+    width: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+}
+
+.line {
+    position :absolute;
+    display: block;
+    width: 75%;
+    height: 2px;
+    background: #f1f1f1;
+    transition: transform 0.3s ease-out, opacity 0.1s ease-out;
+}
+
+.l1 {
+    transform: translateY(-10px);
+}
+
+.l3 {
+    transform: translateY(10px);
+}
+
+.nav-toggler.active .l1 {
+    transform: translateY(0px) rotate(135deg);
+}
+
+.nav-toggler.active .l2 {
+    opacity: 0;
+}
+
+.nav-toggler.active .l3 {
+    transform: translateY(0px) rotate(-135deg);
+}
+
+nav {
+    position: fixed;
+    width: 100vw;
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(40, 40, 40);
+    border-bottom: 1px solid rgb(207, 207, 207);
+    transform: translateY(-150%);
+    transition: transform 0.3s cubic-bezier(0.73, 0.11, 0.67, 0.84);   
+}
+
+nav.active {
+    transform: translateY(-50%);
+}
+
+nav a {
+    font-family: Quicksand, sans-serif;
+    color: #f1f1f1;
+    font-size: 20px;
+    display: block;
+    margin : 10px 0;
+    text-decoration: none;
+    transition: box-shadow 0.3s ease; /* Optionnel, pour une transition fluide */
+}
+
+nav a:hover {
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    border-radius: 50px;
+    position: fixed; /* Fixe le logo par rapport à la fenêtre du navigateur */
+    bottom: 20px;    /* Distance du bas de la page */
+    right: 20px;     /* Distance de la droite de la page */
+    width: 75px;    /* Largeur du logo */
+    height: auto;    /* Garde les proportions de l'image */
+    z-index: 1000;   /* S'assure que le logo est au-dessus des autres éléments */
+    cursor: pointer;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  
